@@ -1,0 +1,22 @@
+# configurazione del server
+spring:
+  profiles:
+    active: sqlite
+    #active: postgres
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        sql_comments: true
+        format_sql: true
+
+server:
+  port: 8090
+  servlet:
+    contextPath: /postTag
+
+# impostazioni per hibernate
+hibernate:
+  hbm2ddl:
+    auto: none
+  show-sql: true
