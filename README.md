@@ -79,3 +79,7 @@ Notes:
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## swagger catalog at 
+
+http://localhost:8090/postTag/swagger-ui/index.html?configUrl=/postTag/v3/api-docs/swagger-config#/tag-controller/findAll_1
