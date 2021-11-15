@@ -27,8 +27,26 @@ public interface ICrudController<DTO, ID> {
                     content = @Content) })
     ResponseEntity<List<DTO>> findAll();
 
+    @Operation(summary = "Get all item pageable")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Found items",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = BaseId.class)) }),
+            @ApiResponse(responseCode = "400", description = "Invalid id supplied",
+                    content = @Content),
+            @ApiResponse(responseCode = "404", description = "items not found",
+                    content = @Content) })
     ResponseEntity<Page<DTO>> findAll(Pageable pageable);
 
+    @Operation(summary = "Get item by id")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Found items",
+                    content = { @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = BaseId.class)) }),
+            @ApiResponse(responseCode = "400", description = "Invalid id supplied",
+                    content = @Content),
+            @ApiResponse(responseCode = "404", description = "items not found",
+                    content = @Content) })
     ResponseEntity<Optional<DTO>> findById(ID id);
 
     ResponseEntity<DTO> save(DTO DTO);

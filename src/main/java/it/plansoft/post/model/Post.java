@@ -31,7 +31,7 @@ public class Post extends BaseId<Long> {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "title", nullable = false, columnDefinition = "text", unique = true)
+    @Column(name = "title", nullable = false, columnDefinition = "text", unique = false)
     private String title;
 
     @ManyToMany(cascade = CascadeType.ALL)

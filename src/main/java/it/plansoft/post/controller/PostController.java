@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.transaction.Transactional;
+
 /**
  * @author Giuseppe Grosso
  * @project post
@@ -19,7 +21,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/post")
-public class PostController extends BaseCrudController<PostService, PostRepository, IPostMapper, PostDto, Post, Long>
+@Transactional
+public class PostController
+        extends BaseCrudController<PostService, PostRepository, IPostMapper, PostDto, Post, Long>
         implements IPostController<Post> {
 
     // nota eredito tutte le crud della classe base di implementazione.
